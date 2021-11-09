@@ -23,6 +23,7 @@ class _MyAppState extends State<MyApp> {
     FlutterBarcodeScanner.getBarcodeStreamReceiver(
             '#ff6666', 'Cancel', true, ScanMode.BARCODE)!
         .listen((barcode) => print(barcode));
+    Future.delayed(Duration(seconds: 3), () => FlutterBarcodeScanner.dismiss());
   }
 
   Future<void> scanQR() async {
